@@ -9,28 +9,29 @@ public class GlitchPotion : MonoBehaviour
         Active = 1
     }
 	private static readonly string[] sentenceTemplates =
-	{
-		"{playerName} just caused a {noun}—system integrity at risk!",
-		"Warning: {playerName} is {adverb} {intransitiveVerb}!",
-		"{playerName} {transitiveVerb} my code with {intensifier} {adjective} force.",
-		"Error 0xDEADBEEF: {playerName} is too {adjective}.",
-		"Kernel panic: {playerName} overloads the CPU.",
-		"{playerName}’s logic {intransitiveVerb}s in a {noun}.",
-		"Compiler says: ‘{playerName} does not compute.’",
-		"{playerName} triggers segmentation fault {adverb}.",
-		"StackOverflowException: {playerName} recursed infinitely!",
-		"Boot sequence hijacked by {playerName}—{intensifier} {adjective}!",
-		"Fatal error: {playerName} is {adverb} {adjective}.",
-		"{playerName}’s code is a {noun} waiting to happen.",
-		"Unhandled exception at {playerName}.dll!",
-		"{playerName} crashes before ‘Hello World’ even starts.",
-		"System logs: {playerName} is {intensifiers} corrupting memory.",
-		"ERROR double free detected on {adjective} {playerName}"
+    {
+        "{playerName} just caused a {noun}—system integrity at risk!",
+        "Warning : {playerName} is {adverb} {intransitiveVerb}!",
+        "{playerName} {transitiveVerb} my code with {intensifier} {adjective} force.",
+        "Error 0xDEADBEEF: {playerName} is too {adjective}.",
+        "Kernel panic: {playerName} overloads the CPU.",
+        "{playerName}’s logic {intransitiveVerb}s in a {noun}.",
+        "Compiler says: ‘{playerName} does not compute.’",
+        "{playerName} triggers segmentation fault {adverb}.",
+        "StackOverflowException: {playerName} recursed infinitely!",
+        "Boot sequence hijacked by {playerName}—{intensifier} {adjective}!",
+        "Fatal error: {playerName} is {adverb} {adjective}.",
+        "{playerName}’s code is a {noun} waiting to happen.",
+        "Unhandled exception at {playerName}.dll!",
+        "{playerName} crashes before ‘Hello World’ even starts.",
+        "System logs: {playerName} is {intensifier} corrupting memory.",
+        "ERROR double free detected on {adjective} {playerName}",
+        "Missing parathesis at {playerName} line two hundred and eleven"
 	};
 	private static readonly string[] transitiveVerbs =
 	{
-		"segfault at", "overflow", "corrupt", "freeze on", "crash into", "null-ref at",
-		"stack-overflow on", "overflow", "index out-of-bounds on", "deadlock with"
+		"segfault at", "overflow", "corrupt", "freeze on", "crash into", "null ref at",
+		"stack overflow on", "overflow", "index out of bounds on", "deadlock with"
 	};
 
 	private static readonly string[] intransitiveVerbs =
@@ -46,14 +47,14 @@ public class GlitchPotion : MonoBehaviour
 
 	private static readonly string[] intensifiers =
 	{
-		"critically", "fatal-level", "kernel-panic-grade", "utterly", "catastrophically",
+		"critically", "fatal level", "kernel panic grade", "utterly", "catastrophically",
 		"painfully", "sporadically", "relentlessly", "infuriatingly", "randomly"
 	};
 
 	private static readonly string[] nouns =
 	{
-		"buffer-overflow", "null-pointer", "segfault", "stack-overflow", "deadlock",
-		"race-condition", "memory leak", "bit-flip", "core-dump", "exception"
+		"buffer overflow", "null pointer", "segfault", "stack overflow", "deadlock",
+		"race condition", "memory leak", "bit flip", "core dump", "exception"
 	};
 	private static readonly string[] adverbs =
 	{
@@ -157,7 +158,7 @@ public class GlitchPotion : MonoBehaviour
     {
         List<PlayerAvatar> list = SemiFunc.PlayerGetAllPlayerAvatarWithinRange(10f, PhysGrabber.instance.transform.position);
         PlayerAvatar playerAvatar = null;
-        float num = float.MinValue;
+        float num = float.MaxValue;
         foreach (PlayerAvatar item in list)
         {
             if (!(item == PlayerAvatar.instance))

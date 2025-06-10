@@ -41,21 +41,21 @@ public class BrilliancePotion : MonoBehaviour
 	private static readonly string[] intransitiveVerbs =
 	{
 		"shine", "excel", "thrive", "soar", "flourish", "sparkle", "radiate", "stand out",
-		"outperform", "dominate", "blink (in amazement)", "beam (with insight)", "glow", "gleam"
+		"outperform", "dominate", "blink in amazement", "beam with insight", "glow", "gleam"
 	};
 
 	private static readonly string[] adjectives =
 	{
 		"brilliant", "insightful", "sharp", "astute", "perspicacious", "keen", "gifted",
 		"ingenious", "savvy", "visionary", "masterful", "prodigious", "cerebral", "erudite",
-		"lucid", "nimble-minded", "quick-witted", "sage-like", "preternatural"
+		"lucid", "nimble minded", "quick witted", "sage like", "preternatural"
 	};
 
 	private static readonly string[] intensifiers =
 	{
 		"exceptionally", "remarkably", "undeniably", "astoundingly", "profoundly",
 		"outstandingly", "strikingly", "supremely", "incomparably", "tremendously",
-		"unquestionably", "unusually", "supremely", "mind-bogglingly"
+		"unquestionably", "unusually", "supremely", "mind bogglingly"
 	};
 
 	private static readonly string[] nouns =
@@ -165,7 +165,7 @@ public class BrilliancePotion : MonoBehaviour
     {
         List<PlayerAvatar> list = SemiFunc.PlayerGetAllPlayerAvatarWithinRange(10f, PhysGrabber.instance.transform.position);
         PlayerAvatar playerAvatar = null;
-        float num = float.MinValue;
+        float num = float.MaxValue;
         foreach (PlayerAvatar item in list)
         {
             if (!(item == PlayerAvatar.instance))

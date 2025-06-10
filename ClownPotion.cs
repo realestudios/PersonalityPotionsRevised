@@ -21,7 +21,7 @@ public class ClownPotion : MonoBehaviour
 		"If pies {intransitiveVerb}, {playerName} would be a bakery.",
 		"You juggle {noun}s about as well as a {adjective} banana, {playerName}.",
 		"Why so serious, {playerName}? Let’s {transitiveVerb} a {noun}!",
-		"Your brain’s more pie-filled than a {noun}, {playerName}.",
+		"Your brain’s more pie filled than a {noun}, {playerName}.",
 		"I’m {adverb} entertained by your {adjective} antics, {playerName}.",
 		"Step right up, folks—watch {playerName} {intransitiveVerb} in circles!",
 		"{playerName}, you’re the {intensifier} {adjective} joke of the night.",
@@ -40,13 +40,13 @@ public class ClownPotion : MonoBehaviour
 	};
 	private static readonly string[] transitiveVerbs =
 	{
-		"tickle", "juggle", "honk at", "boop", "prank", "spook", "clown-chase", "slip on",
+		"tickle", "juggle", "honk at", "boop", "prank", "spook", "clown chase", "slip on",
 		"pie", "spring at", "squirt", "bounce on", "wiggle", "dangle before", "twirl at"
 	};
 
 	private static readonly string[] intransitiveVerbs =
 	{
-		"honk", "juggle", "wiggle", "boing", "clown-walk", "tumble", "prance",
+		"honk", "juggle", "wiggle", "boing", "clown walk", "tumble", "prance",
 		"flip", "bop", "flail"
 	};
 
@@ -59,7 +59,7 @@ public class ClownPotion : MonoBehaviour
 	private static readonly string[] intensifiers =
 	{
 		"absurdly", "ridiculously", "outrageously", "hilariously", "uproariously",
-		"comically", "bananas-level", "cartoonishly", "circus-grade", "bonkers-so"
+		"comically", "bananas level", "cartoonishly", "circus grade", "bonkers so"
 	};
 
 	private static readonly string[] nouns =
@@ -71,7 +71,7 @@ public class ClownPotion : MonoBehaviour
 	private static readonly string[] adverbs =
 	{
 		"hilariously", "clownishly", "wackily", "zestily", "buffoonishly",
-		"sprightly", "boppingly", "slapstick-style", "boisterously", "twinkly"
+		"sprightly", "boppingly", "slapstick style", "boisterously", "twinkly"
 	};
 
 	private float coolDownUntilNextSentence = 3f;
@@ -168,7 +168,7 @@ public class ClownPotion : MonoBehaviour
     {
         List<PlayerAvatar> list = SemiFunc.PlayerGetAllPlayerAvatarWithinRange(10f, PhysGrabber.instance.transform.position);
         PlayerAvatar playerAvatar = null;
-        float num = float.MinValue;
+        float num = float.MaxValue;
         foreach (PlayerAvatar item in list)
         {
             if (!(item == PlayerAvatar.instance))
