@@ -31,7 +31,8 @@ public class GrumpyPotion : MonoBehaviour
     "Todays weather is {intensifier} dreadful.",
     "I have to deal with you {adjective} people again..",
     "{intensifier} day today, I wish {playerName} stayed home.",
-    "I hope {playerName}'s day is {intensifier} ruined."
+    "I hope {playerName}'s day is {intensifier} ruined.",
+    "{playerName} is closeby, a start to a {intensifier} bad day"
     };
 private static readonly string[] transitiveVerbs =
 {

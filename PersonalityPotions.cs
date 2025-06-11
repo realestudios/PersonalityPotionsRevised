@@ -2,11 +2,12 @@
 using BepInEx.Logging;
 using HarmonyLib;
 using UnityEngine;
+using REPOlib;
 
 namespace PersonalityPotions
 {
 
-	[BepInPlugin("NilsThatBoi.PersonalityPotions", "PersonalityPotions", "1.0.2")]
+	[BepInPlugin("NilsThatBoi.PersonalityPotions", "PersonalityPotions", "1.0.3")]
 
 	public class PersonalityPotions : BaseUnityPlugin
 	{

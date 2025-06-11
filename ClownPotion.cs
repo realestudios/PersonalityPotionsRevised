@@ -36,6 +36,12 @@ public class ClownPotion : MonoBehaviour
 		"Your jokes are flat, {playerName}—like yesterday’s {noun}.",
 		"Step right up! {playerName}’s silliness is {intensifier} {adjective}!",
 		"If juggling ideas was a sport, {playerName} would drop ’em all!",
+		"You wear that {noun} like a true disaster artist, {playerName}.",
+		"{playerName}, I’d say ‘don’t quit your day job,’ but this *is* your day job.",
+		"You didn’t just drop the ball, {playerName} juggled it into orbit.",
+		"{playerName}, even the {adjective} mime is judging you.",
+		"Some people trip over words—{playerName} trips over *existence*.",
+
 		"{playerName} tried tightrope walking… on a banana peel."
 	};
 	private static readonly string[] transitiveVerbs =
@@ -47,30 +53,31 @@ public class ClownPotion : MonoBehaviour
 	private static readonly string[] intransitiveVerbs =
 	{
 		"honk", "juggle", "wiggle", "boing", "clown walk", "tumble", "prance",
-		"flip", "bop", "flail"
+		"flip", "bop", "flail", "skedaddle", "twirl", "kerplunk"
 	};
 
 	private static readonly string[] adjectives =
 	{
-		"goofy", "wacky", "bouncy", "zany", "silly", "loopy", "nutty", "quirky",
+		"goofy", "wacky", "bouncy", "zany", "silly", "loopy", "nutty", "quirky", "giggly",
 		"bumbling", "clownish", "jolly", "bonkers", "whimsical", "bananas", "sprightly"
 	};
 
 	private static readonly string[] intensifiers =
 	{
-		"absurdly", "ridiculously", "outrageously", "hilariously", "uproariously",
-		"comically", "bananas level", "cartoonishly", "circus grade", "bonkers so"
+		"absurdly", "ridiculously", "outrageously", "hilariously", "uproariously", "preposterously",
+		"comically", "bananas level", "cartoonishly", "circus grade", "bonkers so", "spectacularly",
+		"jaw-droppingly", "phenomenally", "ludicrously", "cataclysmically", "blisteringly"
 	};
 
 	private static readonly string[] nouns =
 	{
-		"balloon", "rubber chicken", "big shoe", "stilt", "squirt flower",
+		"balloon", "rubber chicken", "big shoe", "stilt", "squirt flower", "clown car", "oversized bow tie",
 		"unicycle", "giant horn", "crazy wig", "red nose", "pie tray"
 	};
 
 	private static readonly string[] adverbs =
 	{
-		"hilariously", "clownishly", "wackily", "zestily", "buffoonishly",
+		"hilariously", "clownishly", "wackily", "zestily", "buffoonishly", "madly", "ludicrously",
 		"sprightly", "boppingly", "slapstick style", "boisterously", "twinkly"
 	};
 
