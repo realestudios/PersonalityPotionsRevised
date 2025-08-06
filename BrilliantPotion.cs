@@ -10,26 +10,27 @@ public class BrilliancePotion : MonoBehaviour
     }
 	private static readonly string[] sentenceTemplates =
 	{
-		"{playerName} solves {noun}s with {intensifier} {adjective}.",
+        "{playerName} solves problems with {altIntensifier} {altAdjective}.",
 		"{playerName} {transitiveVerb}s problems {adverb}.",
 		"{playerName} is {intensifier} {adjective}.",
-		"{playerName} {intransitiveVerb}s past every {noun}.",
+		"{playerName} {intransitiveVerbsPlural} past every {noun}.",
 		"A true {noun}, {playerName} shines {adverb}.",
-		"{playerName} cracks {noun}s with {intensifier} flair.",
-		"Nothing stops {playerName}—{intransitiveVerb} and conquer.",
-		"{playerName} {transitiveVerb}s tasks {adverb}.",
+		"Nothing stops {playerName}. {intransitiveVerb} and conquer.",
+		"{playerName} {transitiveVerbsPlural} tasks {adverb}.",
 		"{playerName}'s mind is {intensifier} {adjective}.",
-		"{playerName} masters {noun}s {adverb}.",
-		"{playerName} {transitiveVerb}s challenges {adverb}.",
+		"{playerName} masters everything {adverb}.",
+		"{playerName} {transitiveVerbsPlural} challenges {adverb}.",
 		"{playerName} thinks {intensifier} {adjective} thoughts.",
-		"{playerName} makes {noun}s look {adverb}.",
-		"{playerName} always {intransitiveVerb}s ahead.",
+		"{playerName} makes {nounsPlural} look {negativeAdjective}.",
+		"{playerName} {intransitiveVerbsPlural} in any situation.",
 		"{playerName} solves puzzles {adverb}.",
 		"{playerName} runs on {intensifier} {adjective} logic.",
-		"{playerName} is a {noun} at work.",
+		"{playerName} is a {nounsC} at work.",
+        	"{playerName} is an {nounsV} at work.",
 		"{playerName} learns {adverb} and grows {intensifier}.",
-		"{playerName} {transitiveVerb}s complexity with ease.",
-		"{playerName} stands out {adverb} as a {adjective} {noun}."
+		"{playerName} {transitiveVerbsPlural} complexity with ease.",
+		"{playerName} stands out {adverb} as a {adjectiveC} {noun}."
+        	"{playerName} stands out {adverb} as an {adjectiveV} {noun}."
 	};
 	private static readonly string[] transitiveVerbs =
 	{
@@ -38,11 +39,24 @@ public class BrilliancePotion : MonoBehaviour
 		"break down", "map out", "synthesize", "model", "calculate", "forecast", "predict", "interpret"
 	};
 
+    private static readonly string[] transitiveVerbsPlural =
+    {
+        "solves", "analyzes", "decodes", "decrypts", "untangles", "engineers", "architects", "formulates",
+        "orchestrates", "spearheads", "envisions", "designs", "optimizes", "streamlines", "masterminds",
+        "breaks down", "maps out", "synthesizes", "models", "calculates", "forecasts", "predicts", "interprets"
+    };
+
 	private static readonly string[] intransitiveVerbs =
 	{
 		"shine", "excel", "thrive", "soar", "flourish", "sparkle", "radiate", "stand out",
 		"outperform", "dominate", "blink in amazement", "beam with insight", "glow", "gleam"
 	};
+
+    private static readonly string[] intransitiveVerbsPlural =
+    {
+        "shines", "excels", "thrives", "soars", "flourishes", "sparkles", "radiates", "stands out",
+        "outperforms", "dominates", "blinks in amazement", "beams with insight", "glows", "gleams"
+    };
 
 	private static readonly string[] adjectives =
 	{
@@ -51,6 +65,27 @@ public class BrilliancePotion : MonoBehaviour
 		"lucid", "nimble minded", "quick witted", "sage like", "preternatural"
 	};
 
+    private static readonly string[] adjectivesC =
+    {
+        "brilliant", "sharp", "perspicacious", "keen", "gifted", "savvy",
+        "visionary", "masterful", "prodigious", "cerebral", "lucid",
+        "nimble minded", "quick witted", "sage like", "preternatural"
+    };
+
+    private static readonly string[] adjectivesV =
+    {
+        "brilliant", "insightful", "sharp", "astute", "perspicacious", "keen", "gifted",
+        "ingenious", "savvy", "visionary", "masterful", "prodigious", "cerebral", "erudite",
+        "lucid", "nimble minded", "quick witted", "sage like", "preternatural"
+    };
+
+    private static readonly string[] altadjectives =
+    {
+        "brilliance", "insightfulness", "sharpness", "perspicacity", "keenness", "giftedness",
+        "ingeniousness", "visionary", "masterfulness", "prodigiousness",
+        "lucidity", "nimble mindedness", "quick wittedness"
+    };
+
 	private static readonly string[] intensifiers =
 	{
 		"exceptionally", "remarkably", "undeniably", "astoundingly", "profoundly",
@@ -58,11 +93,35 @@ public class BrilliancePotion : MonoBehaviour
 		"unquestionably", "unusually", "supremely", "mind bogglingly"
 	};
 
+    private static readonly string[] altintensifiers =
+    {
+        "exceptional", "remarkable", "undeniable", "astounding", "profound",
+        "outstanding", "striking", "supreme", "incomparable", "tremendous",
+        "unquestionable", "unusual", "mind boggling"
+    };
+
 	private static readonly string[] nouns =
 	{
 		"genius", "prodigy", "visionary", "luminary", "wizard", "maestro", "sage",
 		"thinker", "oracle", "whiz", "trailblazer", "innovator", "architect", "strategist"
 	};
+
+    private static readonly string[] nounsC =
+    {
+        "genius", "prodigy", "visionary", "luminary", "wizard", "maestro", "sage",
+        "thinker", "whiz", "trailblazer", "strategist"
+    };
+
+    private static readonly string[] nounsV =
+    {
+        "oracle", "innovator", "architect"
+    };
+
+    private static readonly string[] nounsPlural =
+    {
+        "geniuses", "prodigies", "visionaries", "luminaries", "wizards", "maestros", "sages",
+        "thinkers", "oracles", "trailblazers", "innovators", "architects", "strategists"
+    };
 
 	private static readonly string[] adverbs =
 	{
@@ -70,6 +129,12 @@ public class BrilliancePotion : MonoBehaviour
 		"gracefully", "keenly", "cunningly", "precisely", "adeptly", "swiftly",
 		"decisively", "inspiredly"
 	};
+
+    private static readonly string[] negativeAdjectives =
+    {
+        "stupid", "amateur", "remedial", "low IQ", "average", "below average", "mediocre",
+        "unimpressive", "unexceptional", "dumb", "subpar", "unremarkable"
+    };
 
 	private float coolDownUntilNextSentence = 3f;
 
@@ -147,7 +212,7 @@ public class BrilliancePotion : MonoBehaviour
                 return;
             if (!SemiFunc.IsMultiplayer())
             {
-                playerName = "the potion";
+                playerName = "you";
             }
             else
             {
@@ -155,7 +220,7 @@ public class BrilliancePotion : MonoBehaviour
                 if (playerAvatar != null && playerAvatar.playerName != null)
                     playerName = playerAvatar.playerName;
                 else
-                    playerName = "the potion";
+                    playerName = "you";
             }
         	SendMessage();
         }
@@ -212,10 +277,20 @@ public class BrilliancePotion : MonoBehaviour
             .Replace("{playerName}", playerName)
             .Replace("{transitiveVerb}", transitiveVerbs[Random.Range(0, transitiveVerbs.Length)])
             .Replace("{intransitiveVerb}", intransitiveVerbs[Random.Range(0, intransitiveVerbs.Length)])
+            .Replace("{intransitiveVerbsPlural}", intransitiveVerbs[Random.Range(0, intransitiveVerbs.Length)])
+            .Replace("{intransitiveVerbsPlural}", intransitiveVerbsPlural[Random.Range(0, intransitiveVerbs.Length)])
             .Replace("{adjective}", adjectives[Random.Range(0, adjectives.Length)])
+            .Replace("{adjectiveC}", adjectives[Random.Range(0, adjectives.Length)])
+            .Replace("{adjectiveV}", adjectives[Random.Range(0, adjectives.Length)])
             .Replace("{intensifier}", intensifiers[Random.Range(0, intensifiers.Length)])
+            .Replace("{altAdjective}", altadjectives[Random.Range(0, altadjectives.Length)])
+            .Replace("{altIntensifier}", altintensifiers[Random.Range(0, altintensifiers.Length)])
             .Replace("{adverb}", adverbs[Random.Range(0, adverbs.Length)])
             .Replace("{noun}", nouns[Random.Range(0, nouns.Length)]);
+            .Replace("{nounsC}", nouns[Random.Range(0, nouns.Length)]);
+            .Replace("{nounsV}", nouns[Random.Range(0, nouns.Length)]);
+            .Replace("{nounsPlural}", nounsPlural[Random.Range(0, nounsPlural.Length)]);
+            .Replace("{negativeAdjective}", negativeAdjectives[Random.Range(0, negativeAdjectives.Length)]);
         return char.ToUpper(result[0]) + result.Substring(1);
     }
 }
