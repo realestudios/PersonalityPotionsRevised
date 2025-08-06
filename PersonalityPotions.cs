@@ -3,14 +3,14 @@ using BepInEx.Logging;
 using HarmonyLib;
 using UnityEngine;
 
-namespace PersonalityPotions
+namespace PersonalityPotionsRevised
 {
 
 	[BepInPlugin("RealeStudios.PersonalityPotionsRevised", "PersonalityPotionsRevised", "1.0.4")]
 
-	public class PersonalityPotions : BaseUnityPlugin
+	public class PersonalityPotionsRevised : BaseUnityPlugin
 	{
-		internal static PersonalityPotions Instance { get; private set; } = null!;
+		internal static PersonalityPotionsRevised Instance { get; private set; } = null!;
 		internal new static ManualLogSource Logger => Instance._logger;
 		private ManualLogSource _logger => base.Logger;
 		internal Harmony? Harmony { get; set; }
