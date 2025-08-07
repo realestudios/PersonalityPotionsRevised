@@ -10,20 +10,22 @@ public class GlitchPotion : MonoBehaviour
     }
 	private static readonly string[] sentenceTemplates =
     {
-        "{playerName} just caused a {noun}—system integrity at risk!",
-        "Warning : {playerName} is {adverb} {intransitiveVerb}!",
-        "{playerName} {transitiveVerb} my code with {intensifier} {adjective} force.",
+        "{playerName} just caused a {noun} system integrity at risk!",
+        "Warning : {playerName} is {adverb} {intransitiveVerbAlt}!",
+        "{playerName} {transitiveVerbPast} my code with {intensifier} {adjective} force.",
         "Error 0xDEADBEEF: {playerName} is too {adjective}.",
         "Kernel panic: {playerName} overloads the CPU.",
-        "{playerName}’s logic {intransitiveVerb}s in a {noun}.",
-        "Compiler says: ‘{playerName} does not compute.’",
+        "{playerName}’s logic {intransitiveVerb}s in a {nounC}.",
+        "{playerName}’s logic {intransitiveVerb}s in an {nounV}.",
+        "Compiler says: {playerName} does not compute.",
         "{playerName} triggers segmentation fault {adverb}.",
         "StackOverflowException: {playerName} recursed infinitely!",
-        "Boot sequence hijacked by {playerName}—{intensifier} {adjective}!",
+        "Boot sequence hijacked by {playerName}, {intensifier} {adjective}!",
         "Fatal error: {playerName} is {adverb} {adjective}.",
-        "{playerName}’s code is a {noun} waiting to happen.",
+        "{playerName}’s code is a {nounC} waiting to happen.",
+        "{playerName}’s code is an {nounV} waiting to happen.",
         "Unhandled exception at {playerName}.dll!",
-        "{playerName} crashes before ‘Hello World’ even starts.",
+        "{playerName} crashes before Hello World even starts.",
         "System logs: {playerName} is {intensifier} corrupting memory.",
         "ERROR double free detected on {adjective} {playerName}",
         "Missing parathesis at {playerName} line two hundred and eleven"
@@ -31,13 +33,25 @@ public class GlitchPotion : MonoBehaviour
 	private static readonly string[] transitiveVerbs =
 	{
 		"segfault at", "overflow", "corrupt", "freeze on", "crash into", "null ref at",
-		"stack overflow on", "overflow", "index out of bounds on", "deadlock with"
+		"stack overflow on", "index out of bounds on", "deadlock with"
 	};
+    private static readonly string[] transitiveVerbsPast =
+    {
+        "segfaulted", "overflowed", "corrupted", "frozen", "crashed",
+        "deadlocked"
+    };
 
 	private static readonly string[] intransitiveVerbs =
 	{
 		"crash", "freeze", "glitch", "lag", "flicker", "stutter", "jit­ter", "loop", "halt"
 	};
+
+    private static readonly string[] intransitiveVerbsAlt =
+    {
+        "crashing", "freezing", "glitching", "lagging", "flickering", "stuttering",
+        "jit­tering", "looping", "halting"
+    };
+
 
 	private static readonly string[] adjectives =
 	{
@@ -56,6 +70,19 @@ public class GlitchPotion : MonoBehaviour
 		"buffer overflow", "null pointer", "segfault", "stack overflow", "deadlock",
 		"race condition", "memory leak", "bit flip", "core dump", "exception"
 	};
+
+    private static readonly string[] nounsC =
+    {
+        "buffer overflow", "null pointer", "segfault", "stack overflow", "deadlock",
+        "race condition", "memory leak", "bit flip", "core dump"
+
+    }:
+
+    private static readonly string[] nounsV =
+    {
+        "exception"
+    }:
+
 	private static readonly string[] adverbs =
 	{
 		"erratically", "chaotically", "incessantly", "unpredictably", "violently",
@@ -204,11 +231,15 @@ public class GlitchPotion : MonoBehaviour
         string result = text
             .Replace("{playerName}", playerName)
             .Replace("{transitiveVerb}", transitiveVerbs[Random.Range(0, transitiveVerbs.Length)])
+            .Replace("{transitiveVerbPast}", transitiveVerbsPast[Random.Range(0, transitiveVerbsPast.Length)])
             .Replace("{intransitiveVerb}", intransitiveVerbs[Random.Range(0, intransitiveVerbs.Length)])
+            .Replace("{intransitiveVerbAlt}", intransitiveVerbsAlt[Random.Range(0, intransitiveVerbsAlt.Length)])
             .Replace("{adjective}", adjectives[Random.Range(0, adjectives.Length)])
             .Replace("{intensifier}", intensifiers[Random.Range(0, intensifiers.Length)])
             .Replace("{adverb}", adverbs[Random.Range(0, adverbs.Length)])
             .Replace("{noun}", nouns[Random.Range(0, nouns.Length)]);
+            .Replace("{nounC}", nounsC[Random.Range(0, nounsC.Length)]);
+            .Replace("{nounV}", nounsV[Random.Range(0, nounsV.Length)]);
         return char.ToUpper(result[0]) + result.Substring(1);
     }
 }
