@@ -33,7 +33,7 @@ public class GrumpyPotion : MonoBehaviour
     "I have to deal with you {adjective} people again..",
     "{adjectiveAlt} day today, I wish {playerName} stayed home.",
     "I hope {playerName}'s day is {intensifier} ruined.",
-    "{playerName} is closeby, a start to a {intensifierC} bad day"
+    "{playerName} is closeby, a start to a {intensifierC} bad day",
     "{playerName} is closeby, a start to an {intensifierv} bad day"
     };
 private static readonly string[] transitiveVerbs =
@@ -154,7 +154,7 @@ private static readonly string[] adverbs =
         GrumpyPotionRenderer.material.mainTextureOffset = new Vector2(0f, Time.time * 0.1f);
         GrumpyPotionRenderer.material.mainTextureScale = new Vector2(2f + Mathf.Sin(Time.time * 1f) * 0.25f, 2f + Mathf.Sin(Time.time * 1f) * 0.25f);
         var trails = particles.trails;
-        if (physGrabObject.grabbed){noun}
+        if (physGrabObject.grabbed)
         {
             if (!particlesPlaying)
             {
@@ -251,7 +251,7 @@ private static readonly string[] adverbs =
             .Replace("{intensifierC}", intensifiersC[Random.Range(0, intensifiersC.Length)])
             .Replace("{intensifierV}", intensifiersV[Random.Range(0, intensifiersV.Length)])
             .Replace("{adverb}", adverbs[Random.Range(0, adverbs.Length)])
-            .Replace("{noun}", nouns[Random.Range(0, nouns.Length)]);
+            .Replace("{noun}", nouns[Random.Range(0, nouns.Length)])
             .Replace("{nounPlural}", nounsPlural[Random.Range(0, nounsPlural.Length)]);
         return char.ToUpper(result[0]) + result.Substring(1);
     }
