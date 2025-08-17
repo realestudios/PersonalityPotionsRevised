@@ -10,36 +10,43 @@ public class GrumpyPotion : MonoBehaviour
     }
 	private static readonly string[] sentenceTemplates =
 {
-    "{playerName} {intransitiveVerb}s about every little {noun}.",
+    "{playerName} {intransitiveVerb}s about every little thing.",
     "I’m {intensifier} {adjective} at {playerName} today.",
-    "{playerName} {transitiveVerb} my patience {adverb}.",
+    "{playerName} {altVerb} my patience.",
     "Good grief, {playerName} is {intensifier} {adjective}.",
-    "Ugh, {playerName} and their {noun}s again.",
+    "Ugh, {playerName} and their {nounPlural} again.",
     "Stop being such a {noun}, {playerName}.",
-    "Can’t {intransitiveVerb} another {noun} from {playerName}.",
+    "Can’t take another {noun} from {playerName}.",
     "{playerName} makes me {intransitiveVerb} {adverb}.",
     "I’ll {transitiveVerb} {playerName} for this {noun}.",
-    "{playerName} is a {adjective} {noun}, honestly.",
-    "{playerName} moves {adverb} what a {noun}.",
+    "{playerName} is a {adjectiveC} {noun}, honestly.",
+    "{playerName} is an {adjectiveV} {noun}, honestly.",
+    "{playerName} moves {adverb}. What a {nounC}.",
+    "{playerName} moves {adverb}. What an {nounV}.",
     "Why is {playerName} so {adjective}? It’s {intensifier} annoying.",
     "This whole place feels like a {noun}.",
-    "Why is everything so {intensifier} {adjective} today?",
-    "I’m {intransitiveVerb} at life for this {noun}",
-        "{playerName} {intransitiveVerb}s louder than a {noun}.",
+    "Why is everything so {intensifier} {adjectiveAltLC} today?",
+    "I’m {adjective} at life for this {noun}",
     "Honestly, {playerName}'s {noun}s are {intensifier} {adjective}.",
-    "If I hear another {noun} from {playerName}, I'll {transitiveVerb} them myself.",
+    "If I hear another word from {playerName}, I'll kill them myself.",
     "Todays weather is {intensifier} dreadful.",
     "I have to deal with you {adjective} people again..",
-    "{intensifier} day today, I wish {playerName} stayed home.",
+    "{adjectiveAlt} day today, I wish {playerName} stayed home.",
     "I hope {playerName}'s day is {intensifier} ruined.",
-    "{playerName} is closeby, a start to a {intensifier} bad day"
+    "{playerName} is closeby, a start to a {intensifierC} bad day"
+    "{playerName} is closeby, a start to an {intensifierv} bad day"
     };
 private static readonly string[] transitiveVerbs =
 {
     "grumble at", "complain about", "scoff at", "growl at", "mutter about",
-    "grudge against", "snarl at", "grumble under", "belabor", "harangue",
+    "grudge against", "snarl at", "belabor", "harangue",
     "gripe about", "berate", "chide", "rail against", "bemoan", "rant about",
-    "snap at",
+    "snap at", "kill"
+};
+
+private static readonly string[] altVerbs =
+{
+    "tests", "tries", "makes me lose", "kills", "ruins"
 };
 
 private static readonly string[] intransitiveVerbs =
@@ -51,7 +58,30 @@ private static readonly string[] intransitiveVerbs =
 private static readonly string[] adjectives =
 {
     "grumpy", "cranky", "irritable", "surly", "cantankerous", "petulant", "gruff", "sour",
-    "testy", "cross", "ornery", "peevish", "crabby", "prickly"
+    "testy", "cross", "ornery", "peevish", "crabby", "prickly", "angry"
+};
+
+private static readonly string[] adjectivesC =
+{
+    "grumpy", "cranky", "surly", "cantankerous", "petulant", "gruff", "sour",
+    "testy", "cross", "peevish", "crabby", "prickly"
+};
+
+private static readonly string[] adjectivesV =
+{
+    "irritable", "ornery", "angry"
+};
+
+private static readonly string[] adjectivesAlt =
+{
+    "Terrible", "Disgusting", "Horrible", "Awful", "Horrid", "Miserable", "Wretched",
+    "Unproductive", "Brutal", "Terrible", "Wasteful"
+};
+
+private static readonly string[] adjectivesAltLC =
+{
+    "terrible", "disgusting", "horrible", "awful", "horrid", "miserable", "wretched",
+    "unproductive", "brutal", "terrible", "wasteful"
 };
 
 private static readonly string[] intensifiers =
@@ -61,15 +91,34 @@ private static readonly string[] intensifiers =
     "hideously", "embarrassingly", "agonizingly", "frustratingly", "vexingly"
 };
 
+private static readonly string[] intensifiersC =
+{
+    "ridiculously", "painfully", "miserably", "deeply", "bumblingly", "perpetually",
+    "stubbornly", "hideously", "frustratingly", "vexingly"
+};
+
+private static readonly string[] intensifiersV =
+{
+    "absurdly", "incredibly", "excessively", "utterly", "unbearably",
+    "embarrassingly", "agonizingly"
+};
+
 private static readonly string[] nouns =
 {
     "nuisance", "headache", "pest", "burden", "fuss", "thorn in my side", "time sink",
-    "annoyance", "hassle", "mess", "pothole", "snag", "roadblock", "blight"
+    "hassle", "mess", "pothole", "snag", "roadblock", "blight"
 };
+
+private static readonly string[] nounsPlural =
+{
+    "nuisances", "headaches", "burdens", "fusses", "thorns in my side", "time sinks",
+    "annoyances", "hassles", "messes", "potholes", "snags", "roadblocks", "blights"
+};
+
 private static readonly string[] adverbs =
 {
     "begrudgingly", "grudgingly", "reluctantly", "sourly", "crossly", "grumpily",
-    "irritably", "huffily", "mopeyly", "grouchily", "snappishly", "stubbornly", "sullenly"
+    "irritably", "huffily", "grouchily"
 };
 	private float coolDownUntilNextSentence = 3f;
 
@@ -105,7 +154,7 @@ private static readonly string[] adverbs =
         GrumpyPotionRenderer.material.mainTextureOffset = new Vector2(0f, Time.time * 0.1f);
         GrumpyPotionRenderer.material.mainTextureScale = new Vector2(2f + Mathf.Sin(Time.time * 1f) * 0.25f, 2f + Mathf.Sin(Time.time * 1f) * 0.25f);
         var trails = particles.trails;
-        if (physGrabObject.grabbed)
+        if (physGrabObject.grabbed){noun}
         {
             if (!particlesPlaying)
             {
@@ -147,7 +196,7 @@ private static readonly string[] adverbs =
                 return;
             if (!SemiFunc.IsMultiplayer())
             {
-                playerName = "the potion";
+                playerName = "you";
             }
             else
             {
@@ -155,7 +204,7 @@ private static readonly string[] adverbs =
                 if (Enemy != null && Enemy.EnemyParent != null)
                     playerName = Enemy.EnemyParent.enemyName;
                 else
-                    playerName = "the potion";
+                    playerName = "you";
             }
             SendMessage();
         }
@@ -191,11 +240,19 @@ private static readonly string[] adverbs =
         string result = text
             .Replace("{playerName}", playerName)
             .Replace("{transitiveVerb}", transitiveVerbs[Random.Range(0, transitiveVerbs.Length)])
+            .Replace("{altVerb}", altVerbs[Random.Range(0, altVerbs.Length)])
             .Replace("{intransitiveVerb}", intransitiveVerbs[Random.Range(0, intransitiveVerbs.Length)])
             .Replace("{adjective}", adjectives[Random.Range(0, adjectives.Length)])
+            .Replace("{adjectiveC}", adjectivesC[Random.Range(0, adjectivesC.Length)])
+            .Replace("{adjectiveV}", adjectivesV[Random.Range(0, adjectivesV.Length)])
+            .Replace("{adjectiveAlt}", adjectivesAlt[Random.Range(0, adjectivesAlt.Length)])
+            .Replace("{adjectiveAltLC}", adjectivesAltLC[Random.Range(0, adjectivesAltLC.Length)])
             .Replace("{intensifier}", intensifiers[Random.Range(0, intensifiers.Length)])
+            .Replace("{intensifierC}", intensifiersC[Random.Range(0, intensifiersC.Length)])
+            .Replace("{intensifierV}", intensifiersV[Random.Range(0, intensifiersV.Length)])
             .Replace("{adverb}", adverbs[Random.Range(0, adverbs.Length)])
             .Replace("{noun}", nouns[Random.Range(0, nouns.Length)]);
+            .Replace("{nounPlural}", nounsPlural[Random.Range(0, nounsPlural.Length)]);
         return char.ToUpper(result[0]) + result.Substring(1);
     }
 }
