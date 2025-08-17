@@ -76,12 +76,12 @@ public class GlitchPotion : MonoBehaviour
         "buffer overflow", "null pointer", "segfault", "stack overflow", "deadlock",
         "race condition", "memory leak", "bit flip", "core dump"
 
-    }:
+    };
 
     private static readonly string[] nounsV =
     {
         "exception"
-    }:
+    };
 
 	private static readonly string[] adverbs =
 	{
