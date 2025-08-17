@@ -26,11 +26,11 @@ public class BrilliancePotion : MonoBehaviour
 		"{playerName} solves puzzles {adverb}.",
 		"{playerName} runs on {intensifier} {adjective} logic.",
 		"{playerName} is a {nounsC} at work.",
-        	"{playerName} is an {nounsV} at work.",
+        "{playerName} is an {nounsV} at work.",
 		"{playerName} learns {adverb} and grows {intensifier}.",
 		"{playerName} {transitiveVerbsPlural} complexity with ease.",
-		"{playerName} stands out {adverb} as a {adjectiveC} {noun}."
-        	"{playerName} stands out {adverb} as an {adjectiveV} {noun}."
+		"{playerName} stands out {adverb} as a {adjectiveC} {noun}.",
+        "{playerName} stands out {adverb} as an {adjectiveV} {noun}."
 	};
 	private static readonly string[] transitiveVerbs =
 	{
@@ -286,10 +286,10 @@ public class BrilliancePotion : MonoBehaviour
             .Replace("{altAdjective}", altadjectives[Random.Range(0, altadjectives.Length)])
             .Replace("{altIntensifier}", altintensifiers[Random.Range(0, altintensifiers.Length)])
             .Replace("{adverb}", adverbs[Random.Range(0, adverbs.Length)])
-            .Replace("{noun}", nouns[Random.Range(0, nouns.Length)]);
-            .Replace("{nounsC}", nouns[Random.Range(0, nouns.Length)]);
-            .Replace("{nounsV}", nouns[Random.Range(0, nouns.Length)]);
-            .Replace("{nounsPlural}", nounsPlural[Random.Range(0, nounsPlural.Length)]);
+            .Replace("{noun}", nouns[Random.Range(0, nouns.Length)])
+            .Replace("{nounsC}", nouns[Random.Range(0, nouns.Length)])
+            .Replace("{nounsV}", nouns[Random.Range(0, nouns.Length)])
+            .Replace("{nounsPlural}", nounsPlural[Random.Range(0, nounsPlural.Length)])
             .Replace("{negativeAdjective}", negativeAdjectives[Random.Range(0, negativeAdjectives.Length)]);
         return char.ToUpper(result[0]) + result.Substring(1);
     }
