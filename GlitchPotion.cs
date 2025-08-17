@@ -10,7 +10,7 @@ public class GlitchPotion : MonoBehaviour
     }
 	private static readonly string[] sentenceTemplates =
     {
-        "{playerName} just caused a {noun} system integrity at risk!",
+        "{playerName} just caused a {noun}. System integrity at risk!",
         "Warning : {playerName} is {adverb} {intransitiveVerbAlt}!",
         "{playerName} {transitiveVerbPast} my code with {intensifier} {adjective} force.",
         "Error 0xDEADBEEF: {playerName} is too {adjective}.",
@@ -237,8 +237,8 @@ public class GlitchPotion : MonoBehaviour
             .Replace("{adjective}", adjectives[Random.Range(0, adjectives.Length)])
             .Replace("{intensifier}", intensifiers[Random.Range(0, intensifiers.Length)])
             .Replace("{adverb}", adverbs[Random.Range(0, adverbs.Length)])
-            .Replace("{noun}", nouns[Random.Range(0, nouns.Length)]);
-            .Replace("{nounC}", nounsC[Random.Range(0, nounsC.Length)]);
+            .Replace("{noun}", nouns[Random.Range(0, nouns.Length)])
+            .Replace("{nounC}", nounsC[Random.Range(0, nounsC.Length)])
             .Replace("{nounV}", nounsV[Random.Range(0, nounsV.Length)]);
         return char.ToUpper(result[0]) + result.Substring(1);
     }
