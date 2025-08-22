@@ -180,7 +180,7 @@ public class ClownPotion : MonoBehaviour
                 return;
             if (!SemiFunc.IsMultiplayer())
             {
-                playerName = "you"; 
+                playerName = "my coworker"; 
             }
             else
             {
@@ -188,7 +188,7 @@ public class ClownPotion : MonoBehaviour
                 if (playerAvatar != null && playerAvatar.playerName != null)
                     playerName = playerAvatar.playerName;
                 else
-                    playerName = "you";
+                    playerName = "my coworker";
             }
             SendMessage();
         }
