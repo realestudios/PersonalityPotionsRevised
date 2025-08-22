@@ -67,9 +67,9 @@ public class MaliciousPotion : MonoBehaviour
         "{playerName} appears to be deceiving us.",
         "Daily reminder that {playerName} is probably watching.",
         "To be honest, {playerName} rocks that {adjective} disguise {adverb}.",
-        "Seeing {playerName} today was {adverb} unsettling.",//
-        "I can't stop {intransitiveVerb} when {playerName} shows up.",
-        "{playerName}, you make my gut {intransitiveVerb}.",
+        "Seeing {playerName} today was {adverb} unsettling.",
+        "I can't stop {intransitiveVerb} when {playerName} shows up.", //alternate verb tense
+        "{playerName}, you make me {intransitiveVerb}.",
         "Is it possible to {transitiveVerb} {playerName} without drawing suspicion?",
         "{playerName} is just too {adjective} to be real.",
         "Thinking about {playerName} makes me {intransitiveVerb} with paranoia.",
