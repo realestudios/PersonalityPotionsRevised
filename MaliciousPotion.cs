@@ -11,14 +11,15 @@ public class MaliciousPotion : MonoBehaviour
     private static readonly string[] sentenceTemplates =
     {
         "Can't shake how {adjective} {playerName} acts.",
-        "{playerName} is {adjective} lie!",
+        "{playerName} is so {adjective}!",
         "{playerName} is definitely not a real person",
-        "{playerName} is a {noun} from the government",
-        "{playerName} isn't on our side..",
-        "I think {playerName} is {intensifier} {adjective}..",
+        "{playerName} is a {nounC} from the government",
+        "{playerName} is an {nounV} from the government",
+        "{playerName} isn't on our side.",
+        "I think {playerName} is {intensifier} {adjective}.",
         "{playerName} makes everything {intensifier} weird.",
         "Why is {playerName} so {adjective}? Something's off.",
-        "Every time I see {playerName}, I {intransitiveVerb} suspiciously.",
+        "Every time I see {playerName}, I {intransitiveVerb}.",
         "{playerName} is just {intensifier} {adjective}, and not in a good way.",
         "Got me {adverb} watching {playerName} all day.",
         "Just want to {transitiveVerb} {playerName} to see what they're hiding.",
@@ -26,7 +27,7 @@ public class MaliciousPotion : MonoBehaviour
         "When {playerName} smiles, I {intransitiveVerb} nervously.",
         "{playerName}, is too {adjective} to be trusted!",
         "Can we talk about how {adjective} {playerName} is? For real, though.",
-        "{playerName} has such a {adjective} vibe... unsettling.",
+        "{playerName} has this {adjective} vibe. Unsettling.",//
         "Just saw {playerName} acting {adjective}, again.",
         "Wow, {playerName} is so {adjective} it's freaking me out.",
         "Every time {playerName} talks, I {intransitiveVerb} a little.",
@@ -144,10 +145,24 @@ public class MaliciousPotion : MonoBehaviour
 	    "suspect", "informant", "mole", "spy", "agent", "traitor", "watchdog", "sentinel", "shadow", "phantom",
 	    "ghost", "operative", "handler", "puppet", "pawn", "decoy", "target", "mark", "threat", "risk",
 	    "conspirator", "instigator", "saboteur", "whistleblower", "double agent", "infiltrator", "provocateur", "schemer", "stalker", "observer",
-	    "interrogator", "monitor", "sentry", "patrol", "leech", "parasite", "nightwatch", "undercover", "mole-hunter", "ghostwatch"
+	    "interrogator", "monitor", "sentry", "patrol", "leech", "parasite", "nightwatch", "undercover agent", "mole hunter", "ghostwatch"
     };
 
-	private static readonly string[] adverbs =
+    private static readonly string[] nounsC =
+    {
+        "suspect", "informant", "mole", "spy", "traitor", "watchdog", "sentinel", "shadow", "phantom",
+        "ghost", "handler", "puppet", "pawn", "decoy", "target", "mark", "threat", "risk",
+        "conspirator", "saboteur", "whistleblower", "double agent", "infiltrator", "provocateur", "schemer", "stalker",
+        "monitor", "sentry", "patrol", "leech", "parasite", "nightwatch", "mole hunter", "ghostwatch"
+    };
+
+    private static readonly string[] nounsV =
+    {
+        "informant", "agent", "operative", "instigator", "observer", "interrogator", "undercover agent"
+
+    };
+
+    private static readonly string[] adverbs =
     {
 	    "eerily", "quietly", "furtively", "stealthily", "nervously", "anxiously", "tensely", "cautiously", "watchfully", "shakily",
 	    "hesitantly", "suspiciously", "clandestinely", "secretively", "furtively", "shiftily", "tremulously", "jitterily", "restlessly", "uneasily",
@@ -230,7 +245,7 @@ public class MaliciousPotion : MonoBehaviour
                 return;
             if (!SemiFunc.IsMultiplayer())
             {
-                playerName = "the cake";
+                playerName = "the potion";
             }
             else
             {
@@ -238,7 +253,7 @@ public class MaliciousPotion : MonoBehaviour
                 if (playerAvatar != null && playerAvatar.playerName != null)
                     playerName = playerAvatar.playerName;
                 else
-                    playerName = "the cake";
+                    playerName = "the potion";
             }
             SendMessage();
         }
@@ -298,7 +313,9 @@ public class MaliciousPotion : MonoBehaviour
             .Replace("{adjective}", adjectives[Random.Range(0, adjectives.Length)])
             .Replace("{intensifier}", intensifiers[Random.Range(0, intensifiers.Length)])
             .Replace("{adverb}", adverbs[Random.Range(0, adverbs.Length)])
-            .Replace("{noun}", nouns[Random.Range(0, nouns.Length)]);
+            .Replace("{noun}", nouns[Random.Range(0, nouns.Length)])
+            .Replace("{nounC}", nounsC[Random.Range(0, nounsC.Length)])
+            .Replace("{nounV}", nounsV[Random.Range(0, nounsV.Length)]);
         return char.ToUpper(result[0]) + result.Substring(1);
     }
 }
