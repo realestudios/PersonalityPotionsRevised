@@ -27,7 +27,7 @@ public class MaliciousPotion : MonoBehaviour
         "When {playerName} smiles, I {intransitiveVerb} nervously.",
         "{playerName}, is too {adjective} to be trusted!",
         "Can we talk about how {adjective} {playerName} is? For real, though.",
-        "{playerName} has this {adjective} vibe. Unsettling.",//
+        "{playerName} has this {adjective} vibe.",
         "Just saw {playerName} acting {adjective}, again.",
         "Wow, {playerName} is so {adjective} it's freaking me out.",
         "Every time {playerName} talks, I {intransitiveVerb} a little.",
@@ -35,39 +35,39 @@ public class MaliciousPotion : MonoBehaviour
         "Is it just me or is {playerName} {intensifier} {adjective} lately?",
         "Not gonna lie, {playerName} is {adverb} sketchy.",
         "{playerName} is always {adjective}, and it's weird.",
-        "I can't help {intransitiveVerb} when {playerName} shows up.",
+        "I can't help but {intransitiveVerb} when {playerName} shows up.",
         "Guess who's hiding something? {playerName}.",
         "{playerName} walking in makes the vibe {intensifier} tense.",
         "{playerName}, what exactly are you planning?",
-        "With {playerName}, everything feels {adjective}... and wrong.",
+        "With {playerName}, everything feels {adjective} and wrong.",
         "Just {adverb} wondering what {playerName} is up to now.",
-        "{playerName} looks {adjective} again... classic.",
-        "Low-key, {playerName} is the most {adjective} person here.",
-        "High-key watching {playerName} closely.",
+        "{playerName} looks {adjective} again. Classic.",
+        "Low key, {playerName} is the most {adjective} person here.",
+        "High key watching {playerName} closely.",
         "{playerName} has that {adjective} something I don't trust.",
         "For real, {playerName}'s vibe is {intensifier} suspicious.",
-        "Can't help but {transitiveVerb} {playerName}; something's up.",
+        "Can't help but {transitiveVerb} {playerName}. Something's up.",
         "{playerName} is {adverb} my {noun} of concern.",
         "Life gets {adjective} when {playerName} is nearby.",
         "{playerName}'s laugh is {intensifier} disturbing.",
-        "{playerName}, you {adverb} {transitiveVerb} alarms in my head.",
+        "{playerName}, you {adverb} sound alarms in my head.",
         "Why is {playerName} so {adjective}? It's creeping me out!",
         "Did you see {playerName} today? Definitely {adjective}.",
         "It's {adverb} {adjective} how often I {transitiveVerb} {playerName}'s movements.",
-        "Me, whenever I see {playerName}: get suspicious.",
+        "I get suspicious whenever I see {playerName}.",
         "{playerName} has me {adverb} {intransitiveVerb} with doubt.",
         "Just saw {playerName}, and yep, still {adjective} as ever.",
         "{playerName} is my {intensifier} {adjective} red flag.",
         "Can confirm, {playerName} is definitely acting {adjective}.",
         "Everyday mood: {intransitiveVerb} every time {playerName} logs in.",
-        "{playerName}, stop being so {adjective}; it's weirding me out.",
-        "When {playerName} is {intensifier} {adjective}... I log off.",
-        "Just {intransitiveVerb} over {playerName} being {adjective} again.",
+        "{playerName}, stop being so {adjective}. It's weirding me out.",
+        "When {playerName} is {intensifier} {adjective}, I log off.",
+        "Just going to {intransitiveVerb} over {playerName} being {adjective} again.", //maybe add alternate tense verbs
         "Yep, {playerName} keeps getting more {adjective} by the hour.",
-        "{playerName} makes me believe in {intensifier} deception.",
-        "Daily reminder: {playerName} is probably watching.",
+        "{playerName} appears to be deceiving us.",
+        "Daily reminder that {playerName} is probably watching.",
         "To be honest, {playerName} rocks that {adjective} disguise {adverb}.",
-        "Seeing {playerName} today was {adverb} unsettling.",
+        "Seeing {playerName} today was {adverb} unsettling.",//
         "I can't stop {intransitiveVerb} when {playerName} shows up.",
         "{playerName}, you make my gut {intransitiveVerb}.",
         "Is it possible to {transitiveVerb} {playerName} without drawing suspicion?",
@@ -117,19 +117,19 @@ public class MaliciousPotion : MonoBehaviour
 	private static readonly string[] intransitiveVerbs =
     {
 	    "shiver", "tremble", "panic", "freeze", "fidget", "hesitate", "stutter", "twitch", "quake", "break into a sweat",
-	    "glance nervously", "duck down", "peer around", "flinch", "wince", "cower", "startle", "scan the room", "edge back", "glance over shoulder",
+	    "duck down", "peer around", "flinch", "wince", "cower", "startle", "scan the room", "edge back",
 	    "hyperventilate", "gulp", "shake", "fluster", "fidget", "stare blankly", "blink rapidly", "grimace", "shift footing", "sweat",
-	    "squint", "crowd away", "back away", "brace oneself", "hunch", "cough nervously", "chew lip", "clench fists", "pace", "click tongue",
-	    "sigh heavily", "earwig", "worry silently", "grow silent", "hold breath", "slink away", "shake head", "grimace", "curl into self", "shudder"
+	    "squint", "crowd away", "back away", "hunch", "pace", "sigh heavily", "earwig", "worry silently", "grow silent", 
+	    "slink away", "shake head", "grimace", "curl into self", "shudder"
     };
 
 	private static readonly string[] adjectives =
     {
 	    "sinister", "shifty", "eerie", "unsettling", "creepy", "suspicious", "sketchy", "ominous", "menacing", "foreboding",
 	    "paranoid", "shady", "murky", "haunting", "dark", "malicious", "unnerving", "threatening", "ominous", "cursed",
-	    "brooding", "jittery", "edgy", "vague", "cryptic", "arcane", "twisted", "disturbing", "sinister", "cautious",
+	    "brooding", "jittery", "edgy", "vague", "cryptic", "arcane", "twisted", "disturbing", "sinister", 
 	    "sleazy", "dubious", "fraught", "murky", "shambling", "shuddering", "clammy", "dreary", "ghastly", "macabre",
-	    "morbid", "shadowy", "spectral", "trembling", "uncanny", "viperous", "venomous", "wicked", "wary", "wraithlike"
+	    "morbid", "shadowy", "spectral", "uncanny", "viperous", "venomous", "wicked", "wary", "wraithlike"
     };
 
 	private static readonly string[] intensifiers =
