@@ -5,6 +5,8 @@
 
 A mod for the game R.E.P.O.
 
+Revised and personalized for my group
+
 ## description
 A bundle of Personality Potions, a sequel to ParanoiaPotion.
 
