@@ -196,7 +196,7 @@ private static readonly string[] adverbs =
                 return;
             if (!SemiFunc.IsMultiplayer())
             {
-                playerName = "you";
+                playerName = "my coworker";
             }
             else
             {
@@ -204,7 +204,7 @@ private static readonly string[] adverbs =
                 if (Enemy != null && Enemy.EnemyParent != null)
                     playerName = Enemy.EnemyParent.enemyName;
                 else
-                    playerName = "you";
+                    playerName = "my coworker";
             }
             SendMessage();
         }
