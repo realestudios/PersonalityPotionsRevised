@@ -62,13 +62,12 @@ public class MaliciousPotion : MonoBehaviour
         "Everyday mood: {intransitiveVerb} every time {playerName} logs in.",
         "{playerName}, stop being so {adjective}. It's weirding me out.",
         "When {playerName} is {intensifier} {adjective}, I log off.",
-        "Just going to {intransitiveVerb} over {playerName} being {adjective} again.", //maybe add alternate tense verbs
+        "Just going to {intransitiveVerb} over {playerName} being {adjective} again.",
         "Yep, {playerName} keeps getting more {adjective} by the hour.",
         "{playerName} appears to be deceiving us.",
         "Daily reminder that {playerName} is probably watching.",
         "To be honest, {playerName} rocks that {adjective} disguise {adverb}.",
         "Seeing {playerName} today was {adverb} unsettling.",
-        "I can't stop {intransitiveVerb} when {playerName} shows up.", //alternate verb tense
         "{playerName}, you make me {intransitiveVerb}.",
         "Is it possible to {transitiveVerb} {playerName} without drawing suspicion?",
         "{playerName} is just too {adjective} to be real.",
@@ -76,23 +75,18 @@ public class MaliciousPotion : MonoBehaviour
         "My day gets {adjective} when {playerName} is online.",
         "{playerName} is my least favorite {noun}.",
         "I {transitiveVerb} {playerName} a little too much.",
-        "Just {adverb} trying to {transitiveVerb} what {playerName} is up to.",
-        "Whenever I see {playerName}, I {intransitiveVerb} quietly.",
-        "{playerName} has the most {adjective} plans... I know it.",
-        "Can't wait to {transitiveVerb} {playerName} caught.",
+        "Whenever I see {playerName}, I {intransitiveVerb}.",
+        "{playerName} has the most {adjective} plans. I know it.",
         "If only {playerName} knew how {adjective} they seem to everyone else.",
         "Feeling {adjective} every time {playerName} logs in.",
         "{playerName}, you're {intensifier} {adjective} and that's not okay.",
-        "I just want to {transitiveVerb} {playerName} with questions.",
-        "{playerName}, you make me {intransitiveVerb} nervously.",
-        "Life is {adjective} when {playerName} shows up... and not in a fun way.",
+        "{playerName}, you make me {intransitiveVerb}.",
+        "Life is {adjective} when {playerName} shows up and not in a fun way.",
         "{playerName} is like the most {adjective} mystery.",
         "Can't stop watching {playerName} for signs.",
-        "I think I {transitiveVerb} {playerName} with doubt.",
-        "{playerName} makes my gut {intransitiveVerb}.",
+        "{playerName} makes me {intransitiveVerb}.",
         "Oh, {playerName}, you're so {adjective} it's scary.",
         "Just thinking about {playerName} makes me anxious.",
-        "Wish I could {transitiveVerb} {playerName} for answers.",
         "{playerName} is simply {adjective}. No way around it.",
         "Feeling {adjective} whenever {playerName} is near.",
         "{playerName}, you weird me out more every day.",
@@ -101,7 +95,7 @@ public class MaliciousPotion : MonoBehaviour
         "{playerName} is {intensifier} {adjective}, and I don't like it.",
         "I have to keep watching {playerName}'s {adjective} moves.",
         "{playerName} is {adverb} {adjective} and it's freaking everyone out.",
-        "Just {intransitiveVerb} about how {adjective} {playerName} is lately.",
+        "Just thinking about how {adjective} {playerName} is lately.",
         "{playerName} makes my day {intensifier} stressful."
     };
 
@@ -128,7 +122,7 @@ public class MaliciousPotion : MonoBehaviour
 	    "sinister", "shifty", "eerie", "unsettling", "creepy", "suspicious", "sketchy", "ominous", "menacing", "foreboding",
 	    "paranoid", "shady", "murky", "haunting", "dark", "malicious", "unnerving", "threatening", "ominous", "cursed",
 	    "brooding", "jittery", "edgy", "vague", "cryptic", "arcane", "twisted", "disturbing", "sinister", 
-	    "sleazy", "dubious", "fraught", "murky", "shambling", "shuddering", "clammy", "dreary", "ghastly", "macabre",
+	    "sleazy", "dubious", "fraught", "murky", "shambling", "clammy", "dreary", "ghastly", "macabre",
 	    "morbid", "shadowy", "spectral", "uncanny", "viperous", "venomous", "wicked", "wary", "wraithlike"
     };
 
@@ -245,7 +239,7 @@ public class MaliciousPotion : MonoBehaviour
                 return;
             if (!SemiFunc.IsMultiplayer())
             {
-                playerName = "the potion";
+                playerName = "my coworker";
             }
             else
             {
@@ -253,7 +247,7 @@ public class MaliciousPotion : MonoBehaviour
                 if (playerAvatar != null && playerAvatar.playerName != null)
                     playerName = playerAvatar.playerName;
                 else
-                    playerName = "the potion";
+                    playerName = "my coworker";
             }
             SendMessage();
         }
