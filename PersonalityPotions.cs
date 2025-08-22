@@ -6,7 +6,7 @@ using UnityEngine;
 namespace PersonalityPotionsRevised
 {
 
-	[BepInPlugin("RealeStudios.PersonalityPotionsRevised", "PersonalityPotionsRevised", "1.0.4")]
+	[BepInPlugin("RealeStudios.PersonalityPotionsRevised", "PersonalityPotionsRevised", "1.1.0")]
 
 	public class PersonalityPotionsRevised : BaseUnityPlugin
 	{
