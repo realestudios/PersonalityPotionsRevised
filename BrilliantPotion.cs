@@ -212,7 +212,7 @@ public class BrilliancePotion : MonoBehaviour
                 return;
             if (!SemiFunc.IsMultiplayer())
             {
-                playerName = "you";
+                playerName = "my coworker";
             }
             else
             {
@@ -220,7 +220,7 @@ public class BrilliancePotion : MonoBehaviour
                 if (playerAvatar != null && playerAvatar.playerName != null)
                     playerName = playerAvatar.playerName;
                 else
-                    playerName = "you";
+                    playerName = "my coworker";
             }
         	SendMessage();
         }
